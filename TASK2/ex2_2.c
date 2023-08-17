@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
     }
 
     const char *filename = argv[1];
-    uint64_t N = atoll(argv[2]);  // Use atoll() for converting string to uint64_t
+    uint64_t N = atoll(argv[2]);  
 
     FILE *file = fopen(filename, "wb");
     if (!file) {
@@ -19,10 +19,10 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    srand((unsigned int)time(NULL));  // Cast to unsigned int
+    srand((unsigned int)time(NULL));  
 
     for (uint64_t i = 0; i < N; i++) {
-        uint64_t num = ((uint64_t)rand() << 32) | rand();  // Generate a 64-bit random number
+        uint64_t num = ((uint64_t)rand() << 32) | rand();  
         fwrite(&num, sizeof(uint64_t), 1, file);
     }
 
